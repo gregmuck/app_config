@@ -1,4 +1,7 @@
-require 'app_config'
+require File.dirname(__FILE__) + '/lib/app_config'
 
-::AppConfig = ApplicationConfiguration.new(RAILS_ROOT+"/config/app_config.yml",
-                                           RAILS_ROOT+"/config/environments/#{RAILS_ENV}.yml")
+c = AppConfig.new
+c.use_file!("#{RAILS_ROOT}/config/config.yml")
+c.use_file!("#{RAILS_ROOT}/config/config.local.yml")
+c.use_section!(RAILS_ENV)
+::Conf = c
