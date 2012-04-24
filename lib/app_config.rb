@@ -22,7 +22,8 @@ class AppConfig
   end
 
   def set_params(new_params)
-    @params.merge!(new_params) if new_params
+    @params = new_params
+#    @params.merge!(new_params) if new_params
   end
 
   def get_params
