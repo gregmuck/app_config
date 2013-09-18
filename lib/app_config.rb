@@ -34,8 +34,8 @@ class AppConfig
     param = param.to_s
     if @params.key?(param)
       @params[param]
-    elsif RAILS_ENV != 'production'
-      raise "Invalid AppConfig Parameter " + param
+    # elsif RAILS_ENV != 'production'
+    #   raise "Invalid AppConfig Parameter " + param
     else
       nil
     end
